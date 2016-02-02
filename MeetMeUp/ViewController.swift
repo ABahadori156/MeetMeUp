@@ -8,14 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var resultsArray:NSArray?
     var eventsJson = NSDictionary()
+    var searchParameters = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         let url = NSURL(string: "https://api.meetup.com/2/open_events.json?zip=60604&text=mobile&time=,1w&key=214f172c234154602f63736a7e751e35")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
@@ -30,7 +33,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         task.resume()
     }
-
+    //
+    //    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    //
+    //        return true
+    //    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        self.searchParameters = searchBar.text!
+        self.loadPage()
+    }
+    
+    func loadPage() {
+        let url = NSURL(string: "https://api.meetup.com/2/open_events.json?zip=60604&text=" + searchParameters + "&time=,1w&key=214f172c234154602f63736a7e751e35")
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                do {
+                    
+                    self.eventsJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                    self.resultsArray = self.eventsJson.objectForKey("results") as? NSArray
+                    self.tableView.reloadData()
+                }catch let error as NSError {
+                    print("error: " + error.localizedDescription)
+                }
+            })
+        }
+        task.resume()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,7 +95,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let path = tableView.indexPathForCell(cell)
         destination.selectedEvent = resultsArray?.objectAtIndex(path!.row) as? NSDictionary
     }
-
-
+    
+    
 }
 

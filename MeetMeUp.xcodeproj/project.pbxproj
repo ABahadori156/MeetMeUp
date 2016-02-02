@@ -14,6 +14,7 @@
 		3269720A1C600BCA0066F796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326972091C600BCA0066F796 /* Assets.xcassets */; };
 		3269720D1C600BCA0066F796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3269720B1C600BCA0066F796 /* LaunchScreen.storyboard */; };
 		326972151C601F500066F796 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326972141C601F500066F796 /* DetailViewController.swift */; };
+		9125E8981C6027DE00744D0A /* webVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125E8971C6027DE00744D0A /* webVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3269720C1C600BCA0066F796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3269720E1C600BCA0066F796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		326972141C601F500066F796 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9125E8971C6027DE00744D0A /* webVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				326971FF1C600BCA0066F796 /* AppDelegate.swift */,
 				326972011C600BCA0066F796 /* ViewController.swift */,
 				326972141C601F500066F796 /* DetailViewController.swift */,
+				9125E8971C6027DE00744D0A /* webVC.swift */,
 				326972031C600BCA0066F796 /* Main.storyboard */,
 				326972091C600BCA0066F796 /* Assets.xcassets */,
 				3269720B1C600BCA0066F796 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			files = (
 				326972021C600BCA0066F796 /* ViewController.swift in Sources */,
 				326972081C600BCA0066F796 /* MeetMeUp.xcdatamodeld in Sources */,
+				9125E8981C6027DE00744D0A /* webVC.swift in Sources */,
 				326972001C600BCA0066F796 /* AppDelegate.swift in Sources */,
 				326972151C601F500066F796 /* DetailViewController.swift in Sources */,
 			);
@@ -293,6 +297,7 @@
 				326972131C600BCA0066F796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

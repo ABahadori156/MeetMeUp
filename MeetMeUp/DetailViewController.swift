@@ -17,24 +17,17 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        navigationItem.title = selectedEvent?.objectForKey("name") as? String
+        let rsvpCount:NSNumber = selectedEvent?.objectForKey("yes_rsvp_count") as! NSNumber
+        let rsvpCountAsString:String = String(format:"%@", rsvpCount)
+        let eventDescription:String = (selectedEvent?.objectForKey("description") as? String)!
+        countLabel.text = rsvpCountAsString
+        eventDescriptionlabel.text = eventDescription
+        hostLabel.text = selectedEvent?.objectForKey("venue")?.objectForKey("name") as? String
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destVC = segue.destinationViewController as? webVC
+        destVC?.eventDictionary = selectedEvent
     }
-    */
-
 }

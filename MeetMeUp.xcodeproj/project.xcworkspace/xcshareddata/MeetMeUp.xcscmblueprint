@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A3689E8BA526F3696002DB115DCA8CD5A40DD73E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AE8B282D70246D48C27060F488F35085970D0327" : 0,
+    "A3689E8BA526F3696002DB115DCA8CD5A40DD73E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "753F6464-BC27-4C8D-8E64-41F96FC4E066",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AE8B282D70246D48C27060F488F35085970D0327" : "..",
+    "A3689E8BA526F3696002DB115DCA8CD5A40DD73E" : "MeetMeUp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MeetMeUp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MeetMeUp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rauriemo\/MeetMeUp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A3689E8BA526F3696002DB115DCA8CD5A40DD73E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bikisDesign\/eloquentList.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AE8B282D70246D48C27060F488F35085970D0327"
+    }
+  ]
+}
