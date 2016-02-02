@@ -22,22 +22,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let url = NSURL(string: "https://api.meetup.com/2/open_events.json?zip=60604&text=mobile&time=,1w&key=214f172c234154602f63736a7e751e35")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            do {
-                self.eventsJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                self.resultsArray = self.eventsJson.objectForKey("results") as? NSArray
-                self.tableView.reloadData()
-            }catch let error as NSError {
-                print("error: " + error.localizedDescription)
-            }
+            dispatch_async(dispatch_get_main_queue(), {
+                do {
+                    self.eventsJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                    self.resultsArray = self.eventsJson.objectForKey("results") as? NSArray
+                    self.tableView.reloadData()
+                }catch let error as NSError {
+                    print("error: " + error.localizedDescription)
+                }
+            })
         }
         
         task.resume()
     }
-    //
-    //    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-    //
-    //        return true
-    //    }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
